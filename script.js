@@ -90,10 +90,17 @@ function generateObstacle(){
 }
 generateObstacle(); 
 
-function control(e){
-    if(e.key == 'ArrowUp' || e.key ==''){
+// function control(e){
+//     if(e.key == 'ArrowUp' || e.key ==''){
+//         jump();
+//     }
+function control(e) {
+    // Check if any key is pressed or if it's a touch event on mobile
+    if (e.key || e.type === 'touchstart') {
         jump();
     }
+}
+
 }
 
 document.addEventListener('keydown',control);
